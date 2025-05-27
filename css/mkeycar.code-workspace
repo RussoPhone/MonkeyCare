@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../SCL"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Petshop"
+	}
+}
