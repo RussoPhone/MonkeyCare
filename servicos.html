@@ -1,37 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonkeyCare - Petshop</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serviços - MonkeyCare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="sobre.html">Sobre Nós</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="MonkeyCare Logo">
+      <h1>MonkeyCare</h1>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="servicos.html" class="active"><i class="fas fa-paw"></i> Serviços</a>
+      <a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a>
+      <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+      <div class="auth-links">
+        <button id="btn-login" class="btn-auth">Login</button>
+        <button id="btn-register" class="btn-auth">Registrar</button>
+      </div>
+      <div class="user-menu" style="display:none; position:relative;">
+        <button id="btn-user-menu" class="btn-auth">
+          <i class="fas fa-user-circle"></i>
+          <span id="user-name">Usuário</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <ul id="menu-options" style="position:absolute; right:0; top:100%; background:#fff; list-style:none; padding:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1); display:none;">
+          <li><a href="#" id="menu-editar">Editar Perfil</a></li>
+          <li><a href="servicos.html#meus-servicos" id="menu-servicos">Meus Serviços</a></li>
+          <li><a href="#" id="menu-logout">Sair</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Nossos Serviços</h2>
-        <div class="servicos">
-            <div class="servico">
-                <h3>Banho Completo</h3>
-                <p>R$ 80,00</p>
-                <input type="checkbox" data-preco="80">
-            </div>
-            <!-- Adicione mais serviços aqui -->
-        </div>
+  <main class="servicos-page container">
+    <h2 class="titulo-destaque">🛎️ Serviços de cuidados para os Macacos-Pregos e Saguis</h2>
+    <div class="servicos-container">
+      <div class="servico-card" data-nome="Banho Moderno-Primitivo" data-preco="120">
+        <div class="servico-icon"><i class="fas fa-shower"></i></div>
+        <h3>Banho de lama e com ducha</h3>
+        <p class="descricao">Hidratação com shampoo Clear Monkey, escovação e massagem relaxante pro macaco.</p>
+        <p class="preco">R$ 120,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+      <div class="servico-card" data-nome="Treinamento Especializado" data-preco="200">
+        <div class="servico-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Treinamento Especializado</h3>
+        <p class="descricao">Sessões de treino para ajudar seu macaco se tornar um companheiro inteligente.</p>
+        <p class="preco">R$ 200,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+      <div class="servico-card" data-nome="Babá de Primatas" data-preco="300">
+        <div class="servico-icon"><i class="fas fa-baby"></i></div>
+        <h3>Babá pra macaco</h3>
+        <p class="descricao">Cuidados de uma semana pro seu macaquinho.</p>
+        <p class="preco">R$ 300,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+      <div class="servico-card" data-nome="Spa de Pelos" data-preco="150">
+        <div class="servico-icon"><i class="fas fa-spa"></i></div>
+        <h3>Cabeleleiro do Primata</h3>
+        <p class="descricao">Cortes de cabelos seguros pra macacos e hidratação.</p>
+        <p class="preco">R$ 150,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+      <div class="servico-card" data-nome="Exame de Saúde Completo" data-preco="250">
+        <div class="servico-icon"><i class="fas fa-vials"></i></div>
+        <h3>Exame de Saúde Completo</h3>
+        <p class="descricao">Exame com veterinários registrados e vacinação.</p>
+        <p class="preco">R$ 250,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+      <div class="servico-card" data-nome="Passeio Monitorado" data-preco="90">
+        <div class="servico-icon"><i class="fas fa-walking"></i></div>
+        <h3>Passeio Monitorado</h3>
+        <p class="descricao">Caminhada monitorada pela raul lopes com o seu macaco.</p>
+        <p class="preco">R$ 90,00</p>
+        <button class="btn-selecionar">Selecionar</button>
+      </div>
+    </div>
 
-        <div class="total">
-            <h3>Total: R$ <span id="total">0.00</span></h3>
-        </div>
-    </main>
+    <aside class="carrinho-container" id="meus-servicos">
+      <h3>🛒 Serviços escolhidos:</h3>
+      <ul id="itens-carrinho"></ul>
+      <div class="total">Total: R$ <span id="total">0,00</span></div>
+      <p id="login-prompt" class="login-prompt">Faça login para finalizar seu pedido.</p>
+      <button id="btn-encomendar" class="btn-encomendar" disabled>Escolher Serviços</button>
+    </aside>
 
-    <script src="js/script.js"></script>
+    <div id="modal-checkout" class="modal-overlay">
+      <div class="modal-box">
+        <button id="close-checkout" class="close-modal">×</button>
+        <h2>Finalize seu pedido</h2>
+        <form id="formCheckout">
+  <div class="form-group">
+    <label for="endereco">Endereço</label>
+    <input type="text" id="endereco" required>
+  </div>
+  <div class="form-group">
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf" required pattern="\d{11}">
+  </div>
+  <div class="form-group">
+    <label for="celular">Celular</label>
+    <input type="tel" id="celular" required pattern="\d{11}">
+  </div>
+  <div class="form-group">
+    <label for="pagamento">Pagamento</label>
+    <select id="pagamento" required>
+      <option value="">Selecione</option>
+      <option>Cartão de Crédito</option>
+      <option>Pix</option>
+      <option>Boleto</option>
+    </select>
+  </div>
+  <button type="submit" class="btn">Confirmar Pedido</button>
+</form>
+
+      </div>
+    </div>
+
+ 
+  <div id="modal-auth" class="modal-overlay">
+    <div class="modal-box">
+      <button class="close-modal" id="close-auth">×</button>
+      <div class="tab-buttons">
+        <button type="button" class="tab-btn active" data-target="login-form">Login</button>
+        <button type="button" class="tab-btn" data-target="register-form">Registrar</button>
+      </div>
+      <div id="login-form" class="tab-content" style="display:block;">
+        <form id="form-login">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" name="login-email" required>
+          </div>
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" name="login-senha" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </form>
+      </div>
+      <div id="register-form" class="tab-content" style="display:none;">
+        <form id="form-register">
+          <div class="form-group">
+            <label for="reg-nome">Nome Completo</label>
+            <input type="text" id="reg-nome" name="reg-nome" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-email">E-mail</label>
+            <input type="email" id="reg-email" name="reg-email" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-cpf">CPF</label>
+            <input type="text" id="reg-cpf" name="reg-cpf" pattern="\d{11}" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-endereco">Endereço Residencial</label>
+            <input type="text" id="reg-endereco" name="reg-endereco" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-celular">Celular</label>
+            <input type="tel" id="reg-celular" name="reg-celular" pattern="\d{11}" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-senha">Senha</label>
+            <input type="password" id="reg-senha" name="reg-senha" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+  
+  document.getElementById('btn-encomendar').addEventListener('click', function(e) {
+    const user = JSON.parse(localStorage.getItem('mc_user'));
+    if (!user) {
+      e.preventDefault();
+      showAuthModal('login-form');
+    }
+  });
+
+ 
+  const modalAuth = document.getElementById('modal-auth');
+  const closeAuth = document.getElementById('close-auth');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  function showAuthModal(target = 'login-form') {
+    modalAuth.style.display = 'flex';
+    tabButtons.forEach(btn => {
+      const content = document.getElementById(btn.dataset.target);
+      if (btn.dataset.target === target) {
+        btn.classList.add('active');
+        content.style.display = 'block';
+      } else {
+        btn.classList.remove('active');
+        content.style.display = 'none';
+      }
+    });
+  }
+  closeAuth.addEventListener('click', () => modalAuth.style.display = 'none');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => showAuthModal(btn.dataset.target));
+  });
+
+  
+  document.getElementById('btn-login').addEventListener('click', () => showAuthModal('login-form'));
+  document.getElementById('btn-register').addEventListener('click', () => showAuthModal('register-form'));
+</script>
 </body>
 </html>

@@ -1,29 +1,56 @@
-<html lang="pt-BR">
+<!DOCTYPE html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre a MonkeyCare</title>
+    <title>Sobre o MonkeyCare</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="servicos.html">Serviços</a>
-            <a href="sobre.html">Sobre Nós</a>
-            <a href="contato.html">Contato</a>
-        </nav>
-    </header>
+    <div class="logo">
+      <img src="img/logo.png" alt="MonkeyCare Logo">
+      <h1>MonkeyCare</h1>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="servicos.html" active"><i class="fas fa-paw"></i> Serviços</a>
+      <a href="sobre.html" class="active"><i class="fas fa-info-circle"></i> Sobre</a>
+      <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+
+  <div class="auth-links">
+  <button id="btn-login" class="btn-auth">Login</button>
+  <button id="btn-register" class="btn-auth">Registrar</button>
+</div>
+
+
+<div class="user-menu" style="display: none; position:relative;">
+  <button id="btn-user-menu" class="btn-auth">
+    <i class="fas fa-user-circle"></i>
+    <span id="user-name">Usuário</span>
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <ul id="menu-options" style="position:absolute; right:0; top:100%; background:#fff; list-style:none; padding:0.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.1); display:none;">
+    <li><a href="#" id="menu-editar">Editar Perfil</a></li>
+    <li><a href="servicos.html#meus-servicos" id="menu-servicos">Meus Serviços</a></li>
+    <li><a href="#" id="menu-logout">Sair</a></li>
+  </ul>
+</div>
+
+
+    </nav>
+  </header>
+
 
     <main>
-        <!-- Decoração de folhas -->
+        
         <img src="img/folhas.png" class="folha-decor folha1" alt="decoração">
         
         <section class="sobre-container">
             <div class="ibama-alert">
                 <img src="img/ibama-logo.png" alt="Logo IBAMA">
-                <p>Atuamos em total conformidade com a Lei nº 9.605/98 e portarias do IBAMA</p>
+                <p>Atuamos em total conformidade com a Lei nº 9.605/98 e portarias do IBAMA. Operamos apenas na cidade de Teresina, Piauí.</p>
             </div>
 
             <h1>🐒 Nossa Missão</h1>
@@ -34,8 +61,8 @@
                     <h2>📜 Legalidade</h2>
                     <ul>
                         <li>Verificamos a documentação do animal (CERT/IBAMA)</li>
-                        <li>Aceitamos apenas animais com microchipagem registrada</li>
-                        <li>Relatórios mensais ao órgão ambiental</li>
+                        <li>Aceitamos apenas animais com registros certificados</li>
+                        <li>Enviamos relatórios sobre nossas atividades ao IBAMA.</li>
                     </ul>
                 </div>
 
@@ -43,19 +70,147 @@
                     <h2>🏥 Estrutura</h2>
                     <ul>
                         <li>Veterinários especializados em primatologia</li>
-                        <li>Ambientes de enriquecimento ambiental</li>
-                        <li>Quarentenário para novos resgates</li>
+                        <li>Fornecimento de meios para a evolução do macaco.</li>
+                        <li>Cuiadadouro para seu primata por um mês</li>
                     </ul>
                 </div>
             </div>
 
             <div class="cta-ibama">
-                <p>Seu macaco tem documentação regular?<br>
-                <a href="contato.html">👉 Clique aqui para agendar uma verificação</a></p>
+                <p>Você tem documentos, mas e o seu macaco?<br>
+                <a href="contato.html">👉 Clique aqui para agendar uma verificação dos documentos</a></p>
             </div>
+         
+<div id="modal-auth" class="modal-overlay">
+  <div class="modal-box">
+    <button class="close-modal" id="close-auth">×</button>
+<div id="modal-profile" class="modal-overlay">
+  <div class="modal-box">
+    <button class="close-modal" id="close-profile">&times;</button>
+    <h2>Editar Perfil</h2>
+    <form id="form-profile">
+      <div class="form-group">
+        <label for="profile-endereco">Endereço Completo:</label>
+        <input type="text" id="profile-endereco" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="profile-celular">Celular:</label>
+        <input type="tel" id="profile-celular" pattern="[0-9]{11}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="profile-pagamento">Método de Pagamento Padrão:</label>
+        <select id="profile-pagamento" required>
+          <option value="">-- Selecione --</option>
+          <option>Cartão de Crédito</option>
+          <option>Pix</option>
+          <option>Boleto</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Salvar Alterações</button>
+    </form>
+  </div>
+</div>
+ 
+    <div class="tab-buttons">
+      <button type="button" class="tab-btn active" data-target="login-form">Login</button>
+      <button type="button" class="tab-btn"             data-target="register-form">Registrar</button>
+    </div>
+
+  
+    <div id="login-form" class="tab-content" style="display: block;">
+      <form id="form-login">
+        <div class="form-group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" name="login-email" required>
+          <div class="erro" id="login-error" style="display: none;"></div>
+        </div>
+        <div class="form-group">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" name="login-senha" required>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+    </div>
+
+   
+    <div id="register-form" class="tab-content" style="display: none;">
+      <form id="form-register">
+        <div class="form-group">
+          <label for="reg-nome">Nome Completo</label>
+          <input type="text" id="reg-nome" name="reg-nome" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">E-mail</label>
+          <input type="email" id="reg-email" name="reg-email" required>
+          <div class="erro" id="email-error" style="display: none;"></div>
+        </div>
+        <div class="form-group">
+  <label for="reg-cpf">CPF</label>
+  <input type="text" id="reg-cpf" name="reg-cpf" pattern="\d{11}" required placeholder="Somente números">
+</div>
+
+
+<div class="form-group">
+  <label for="reg-endereco">Endereço Residencial</label>
+  <input type="text" id="reg-endereco" name="reg-endereco" required placeholder="Rua, número, complemento, bairro, cidade">
+</div>
+
+
+<div class="form-group">
+  <label for="reg-celular">Celular</label>
+  <input type="tel" id="reg-celular" name="reg-celular" pattern="\d{11}" required placeholder="DDDTxxxxxxxx">
+</div>
+        <div class="form-group">
+          <label for="reg-senha">Senha</label>
+          <input type="password" id="reg-senha" name="reg-senha" required>
+          <div class="erro" id="senha-error" style="display: none;"></div>
+        </div>
+        <div class="form-group">
+          <div class="erro" id="register-error" style="display: none;"></div>
+        </div>
+        <button type="submit" class="btn">Registrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="modal-profile" class="modal-overlay" style="display: none;">
+  <div class="modal-box">
+    <button class="close-modal" id="close-profile">&times;</button>
+    <h2>Editar Perfil</h2>
+    <form id="form-profile">
+      <div class="form-group">
+        <label for="profile-endereco">Endereço Completo</label>
+        <input type="text" id="profile-endereco" required>
+      </div>
+
+      <div class="form-group">
+        <label for="profile-celular">Celular</label>
+        <input type="tel" id="profile-celular" pattern="\d{11}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="profile-pagamento">Método de Pagamento Padrão</label>
+        <select id="profile-pagamento" required>
+          <option value="">-- Selecione --</option>
+          <option value="Cartão de Crédito">Cartão de Crédito</option>
+          <option value="Pix">Pix</option>
+          <option value="Boleto">Boleto</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">Salvar Alterações</button>
+    </form>
+  </div>
+</div>
+
         </section>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>

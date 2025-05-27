@@ -1,3 +1,56 @@
 {
-  "reservas": []
+  "usuarios": [
+    {
+      "id": "7de2",
+      "nome": "Teste",
+      "email": "teste@gmail.com",
+      "senha": "teste1234"
+    }
+  ],
+  "encomendas": [
+    {
+      "id": "9337",
+      "usuarioId": "7de2",
+      "endereco": "Rua do teste",
+      "cpf": "05573861360",
+      "celular": "89994541105",
+      "pagamento": "Pix",
+      "itens": [
+        {
+          "nome": "Treinamento Especializado",
+          "preco": 200,
+          "qtd": 1
+        },
+        {
+          "nome": "Babá de Primatas",
+          "preco": 300,
+          "qtd": 2
+        }
+      ],
+      "total": 800,
+      "status": "pendente"
+    },
+    {
+      "id": "61d5",
+      "usuarioId": "7de2",
+      "endereco": "Rua do teste",
+      "cpf": "05573861360",
+      "celular": "89994541105",
+      "pagamento": "Pix",
+      "itens": [
+        {
+          "nome": "Treinamento Especializado",
+          "preco": 200,
+          "qtd": 1
+        },
+        {
+          "nome": "Babá de Primatas",
+          "preco": 300,
+          "qtd": 2
+        }
+      ],
+      "total": 800,
+      "status": "pendente"
+    }
+  ]
 }

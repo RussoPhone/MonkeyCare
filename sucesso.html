@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sucesso</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f4f8;
+      font-family: sans-serif;
+    }
+    .sucesso-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    .sucesso-container h1 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .sucesso-container p {
+      margin-bottom: 1.5rem;
+    }
+    .btn-voltar {
+      padding: 0.6rem 1.2rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-voltar:hover {
+      background: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <div class="sucesso-container">
+    <h1><i class="fas fa-check-circle"></i> Mensagem Enviada!</h1>
+    <p>Seu agendamento foi enviado com sucesso. Entraremos em contato.</p>
+    <a href="index.html" class="btn-voltar">Voltar para a Home</a>
+  </div>
+</body>
+</html>
