@@ -12,7 +12,5 @@ JSON Server (https://github.com/typicode/json-server)
 2. Clone este repositório para uma pasta.
 
 3. Execute a API com o seguinte comando na terminal raiz:
+  ```bash 
 json-server --watch db.json --port 3000
-
-O server vai iniciar em:
-http://localhost:3000
