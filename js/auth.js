@@ -1,6 +1,4 @@
-// auth.js
 
-// Função auxiliar para abrir o modal de autenticação
 defineAuthModalFunctions();
 
 function defineAuthModalFunctions() {
@@ -30,7 +28,6 @@ function defineAuthModalFunctions() {
   document.getElementById("btn-register")?.addEventListener("click", () => abrirModalAuth("register-form"));
 }
 
-// LOGIN
 const formLogin = document.getElementById("form-login");
 formLogin?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -59,7 +56,6 @@ formLogin?.addEventListener("submit", async (e) => {
   }
 });
 
-// REGISTRO
 const formRegister = document.getElementById("form-register");
 formRegister?.addEventListener("submit", async (e) => {
   e.preventDefault();
