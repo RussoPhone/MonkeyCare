@@ -1,4 +1,3 @@
-// script.js
 
 (() => {
   const slides = document.querySelectorAll('.slide');
@@ -142,7 +141,6 @@
     setTimeout(() => popupSucesso.style.display = 'none', 3000);
   }
 
-  // Mostrar usuário logado
   const user = JSON.parse(localStorage.getItem("mc_user"));
   if (user) {
     document.querySelector(".auth-links").style.display = "none";
@@ -169,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Preenche os campos
     document.getElementById('profile-endereco').value = user.endereco || '';
     document.getElementById('profile-celular').value = user.celular || '';
     document.getElementById('profile-pagamento').value = user.pagamento || '';
@@ -223,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userMenu = document.querySelector('.user-menu');
     const userNameSpan = document.getElementById('user-name');
 
-    // Mostrar ou esconder menus com base na autenticação
+    
     if (user) {
       authLinks?.style.setProperty('display', 'none');
       userMenu?.style.setProperty('display', 'block');
@@ -233,27 +230,27 @@ document.addEventListener('DOMContentLoaded', () => {
       userMenu?.style.setProperty('display', 'none');
     }
 
-    // Alternar menu do usuário
+  
     btnUserMenu?.addEventListener('click', (e) => {
       e.stopPropagation();
       menuOptions.style.display = menuOptions.style.display === 'block' ? 'none' : 'block';
     });
 
-    // Fechar menu ao clicar fora
+    
     document.addEventListener('click', (e) => {
       if (!menuOptions.contains(e.target) && !btnUserMenu.contains(e.target)) {
         menuOptions.style.display = 'none';
       }
     });
 
-    // Logout
+ 
     menuLogout?.addEventListener('click', (e) => {
       e.preventDefault();
       localStorage.removeItem('mc_user');
       window.location.reload();
     });
 
-    // Ocultar blocos de autenticação duplicados se existirem
+    
     const authBlocks = document.querySelectorAll('.auth-links');
     if (authBlocks.length > 1) {
       for (let i = 1; i < authBlocks.length; i++) {
@@ -261,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Remover item 'Editar Perfil' do menu do usuário
+   
     const itemEditar = document.getElementById('menu-editar');
     itemEditar?.parentElement?.remove();
   });
@@ -271,25 +268,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeCheckout = document.getElementById('close-checkout');
   const btnEncomendar = document.getElementById('btn-encomendar');
 
-  // Ativar botão se logado
+ 
   const user = JSON.parse(localStorage.getItem('mc_user'));
   if (user && btnEncomendar) {
     btnEncomendar.removeAttribute('disabled');
     document.getElementById('login-prompt')?.remove();
   }
 
-  // Abrir modal
   btnEncomendar?.addEventListener('click', () => {
     if (!user) return;
     modalCheckout.style.display = 'flex';
   });
 
-  // Fechar modal
+ 
   closeCheckout?.addEventListener('click', () => {
     modalCheckout.style.display = 'none';
   });
 
-  // Submissão do pedido
+
   formCheckout?.addEventListener('submit', (e) => {
     e.preventDefault();
     const pedido = {
