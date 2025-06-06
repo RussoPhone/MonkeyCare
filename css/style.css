@@ -1,14 +1,13 @@
-/* Reset e Variáveis */
 
 :root {
 
-    --primary: #8B4513; /* Marrom madeira */
+    --primary: #8B4513; 
 
-    --secondary: #FFD700; /* Dourado */
+    --secondary: #FFD700; 
 
-    --light: #F4F1DE; /* Bege claro */
+    --light: #F4F1DE;
 
-    --dark: #3E2723; /* Marrom escuro */
+    --dark: #3E2723; 
 
     --white: #FFFFFF;
 
@@ -44,7 +43,6 @@ body {
 
 
 
-/* Cabeçalho */
 
 header {
 
@@ -142,7 +140,6 @@ nav i {
 
 
 
-/* Carrossel */
 
 .carrossel {
 
@@ -324,7 +321,6 @@ nav i {
 
 
 
-/* Tags de Serviços */
 
 .servicos-tags {
 
@@ -414,7 +410,6 @@ nav i {
 
 
 
-/* Rodapé */
 
 footer {
 
@@ -490,7 +485,6 @@ footer {
 
 
 
-/* Responsividade */
 
 @media (max-width: 768px) {
 
@@ -724,13 +718,11 @@ footer {
 
 
 
-/* Tags de Serviços */
 
 .tags-servicos {
 
     display: grid;
 
-/* Tags de Serviços */
 
 .tags-servicos {
 
@@ -746,7 +738,6 @@ footer {
 
 }
 
-/* If you want to keep .tag img for images inside tags, keep only this part: */
 .tag img {
 
     width: 40px;
@@ -773,7 +764,6 @@ footer {
 
 
 
-/* Estilos para serviços */
 
 .servico {
 
@@ -815,7 +805,6 @@ footer {
 
 
 
-/* Estilos para formulário */
 
 .contato-container {
 
@@ -895,7 +884,6 @@ footer {
 
 
 
-/* Página de Serviços */
 
 .servicos-page {
 
@@ -1084,7 +1072,6 @@ footer {
 
 }
 
-/* Modal overlay e caixa centralizada */
 
 .modal-overlay {
 
@@ -1154,7 +1141,6 @@ footer {
 
 
 
-/* Abas */
 
 .tab-buttons {
 
@@ -1346,7 +1332,6 @@ footer {
 
 }
 
-/* Reset & Básico */
 * {
   margin: 0;
   padding: 0;
@@ -1364,7 +1349,6 @@ body {
   margin: auto;
 }
 
-/* NAVBAR */
 nav.nav {
   display: flex;
   align-items: center;
@@ -1435,7 +1419,6 @@ nav .menu-list li a:hover {
   color: #fff;
 }
 
-/* HERO SMALL */
 .hero-small {
   position: relative;
   color: #fff;
@@ -1460,7 +1443,6 @@ nav .menu-list li a:hover {
   font-size: 1.1rem;
 }
 
-/* FILTROS */
 .filters {
   margin: 2rem 0;
   display: flex;
@@ -1483,7 +1465,6 @@ nav .menu-list li a:hover {
   color: #fff;
 }
 
-/* GRID DE SERVIÇOS */
 .services-list .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1543,7 +1524,6 @@ nav .menu-list li a:hover {
   background: #cf711f;
 }
 
-/* CARRINHO */
 .carrinho-container {
   position: fixed;
   right: 1rem;
@@ -1591,7 +1571,6 @@ nav .menu-list li a:hover {
   background: #1e8449;
 }
 
-/* MODAL CHECKOUT */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1637,7 +1616,6 @@ nav .menu-list li a:hover {
   border-radius: 4px;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .carrinho-container {
     position: static;
